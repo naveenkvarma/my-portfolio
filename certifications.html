@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certifications | Naveen Kumar Varma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+  <!-- ✅ NAVBAR -->
+  <header class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <h1 class="text-xl font-bold">My Certifications</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html#home" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="projects.html" class="hover:text-blue-600">Projects</a>
+        <a href="skills.html" class="hover:text-blue-600">Skills</a>
+        <a href="certifications.html" class="text-blue-600 font-semibold">Certifications</a>
+        <a href="personal.html" class="hover:text-blue-600">More</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="ml-4 text-xl md:text-2xl">🌙</button>
+    </div>
+  </header>
+
+  <!-- ✅ Certifications Section -->
+  <main class="p-8 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">📜 Certifications</h2>
+
+    <ul class="space-y-6">
+      <!-- Sample Certificate 1 -->
+      <li class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <p class="text-base mb-1 flex items-center gap-2">
+          <img src="assets\icons8-aws-48.png" alt="MIT ADT" class="h-6 w-auto" />
+          AWS Academy Cloud Foundations
+        </p>
+        <a href="https://drive.google.com/your-sample-link" target="_blank" class="text-blue-500 hover:underline">View Certificate</a>
+      </li>
+
+      <!-- Sample Certificate 2 -->
+      <li class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <p class="text-base mb-1 flex items-center gap-2">
+          <img src="assets\icons8-ibm-50.png" alt="MIT ADT" class="h-6 w-auto" />
+          AWS Academy Cloud Foundations
+        </p>
+        <a href="https://drive.google.com/your-second-link" target="_blank" class="text-blue-500 hover:underline">View Certificate</a>
+      </li>
+
+
+    </ul>
+  </main>
+
+  <!-- ✅ FOOTER -->
+  <footer class="mt-16 py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm text-gray-600 dark:text-gray-300">
+    <p>© 2025 Naveen Kumar Varma</p>
+  </footer>
+  <!-- 🔼 Back To Top -->
+  <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Back to Top
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>

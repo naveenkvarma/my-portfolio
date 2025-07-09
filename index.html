@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naveen Kumar Varma's | Portfolio</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .glow {
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+    }
+  </style>
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Naveen Kumar Varma | Cloud Engineer Portfolio" />
+<meta property="og:description" content="Explore my projects, resume, skills, and contact details in one place." />
+<meta property="og:image" content="https://yourdomain.com/assets/profile-share.jpg" />
+<meta property="og:url" content="https://yourdomain.com" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Naveen Kumar Varma | Portfolio" />
+<meta name="twitter:description" content="Cloud Engineer in the making. Explore my work and profile." />
+<meta name="twitter:image" content="https://yourdomain.com/assets\Formal Pic_New WBG.jpg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-gradient-to-tr from-gray-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+  <!-- ✅ NAVBAR -->
+  <header class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <h1 class="text-xl font-bold">Welcome to my Portfolio!</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#home" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="projects.html" class="hover:text-blue-600">Projects</a>
+        <a href="skills.html" class="hover:text-blue-600">Skills</a>
+        <a href="certifications.html" class="hover:text-blue-600">Certifications</a>
+        <a href="personal.html" class="hover:text-blue-600">More</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="ml-4 text-xl md:text-2xl">🌙</button>
+    </div>
+  </header>
+
+  <!-- ✅ MAIN CONTENT -->
+  <main class="p-8">
+
+    <!-- 🌟 Hero Section -->
+    <section class="py-16 flex flex-col-reverse md:flex-row items-center gap-10" id="home">
+      <div class="flex-1">
+        <h1 class="text-4xl font-bold mb-4">
+          Hi, I'm
+          <span class="bg-gradient-to-r from-blue-600 to-purple-500 bg-clip-text text-transparent">
+            Naveen Kumar Varma Nagaraju
+          </span>
+        </h1>
+
+        <!-- 🔤 Typewriter Effect -->
+        <p id="typing-text" class="text-xl text-gray-600 dark:text-gray-300 h-8 mb-4"></p>
+
+        <!-- 📄 Resume Buttons -->
+        <div class="flex flex-wrap gap-4 mb-4">
+          <a href="assets/Resume_1.pdf" target="_blank" class="bg-gray-800 text-white px-4 py-2 rounded-lg shadow hover:-translate-y-1 hover:shadow-lg transition">
+            📄 View Resume
+          </a>
+          <a href="assets/Resume_1.pdf" download class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:-translate-y-1 hover:shadow-lg transition">
+            ⬇️ Download Resume
+          </a>
+        </div>
+
+        <!-- 🌐 Social Icons -->
+        <div class="flex gap-4 mt-2">
+          <a href="https://github.com/naveenkvarma" target="_blank" class="hover:scale-125 transition">
+            <img src="assets\icons8-github.svg" alt="GitHub" class="w-6 h-6" />
+          </a>
+          <a href="https://www.linkedin.com/in/nnkvarma/" target="_blank" class="hover:scale-125 transition">
+            <img src="assets\icons8-linkedin.svg" alt="LinkedIn" class="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+
+      <!-- 🖼️ Profile -->
+      <div class="flex-1 text-center">
+        <img src="assets/Formal Pic_New WBG.jpg" alt="Profile" class="w-44 h-auto mx-auto glow shadow-lg object-contain rounded-xl" />
+      </div>
+    </section>
+
+    <!-- 🧠 About Me in Glance Cards -->
+    <section class="mt-10 grid md:grid-cols-3 gap-6 text-center">
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow hover:scale-105 transition">
+        <h3 class="text-xl font-semibold mb-2">🎯 Career Focus</h3>
+        <p class="text-gray-600 dark:text-gray-300">Cloud | DevOps | Backend | Defence Aspirant</p>
+      </div>
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow hover:scale-105 transition">
+        <h3 class="text-xl font-semibold mb-2">📍 Based in</h3>
+        <p class="text-gray-600 dark:text-gray-300">Pune, India 🇮🇳</p>
+      </div>
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow hover:scale-105 transition">
+        <h3 class="text-xl font-semibold mb-2">🚀 Currently</h3>
+        <p class="text-gray-600 dark:text-gray-300">Pursuing MCA Cloud Computing | AWS Cloud Club Member | CHRISTITE</p>
+      </div>
+    </section>
+
+    <!-- 💬 Motivational Quote CTA -->
+    <section class="mt-16 text-center bg-blue-50 dark:bg-blue-900 p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold text-blue-700 dark:text-blue-200">
+        “The best way to predict the future is to build it.”
+      </h2>
+      <p class="mt-2 text-sm text-blue-600 dark:text-blue-300">
+        Let’s connect and create something impactful together.
+      </p>
+    </section>
+  </main>
+
+  <!-- ✅ FOOTER -->
+  <footer class="mt-16 py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm text-gray-600 dark:text-gray-300">
+    <p>© 2025 Naveen Kumar Varma •</p>
+  </footer>
+
+  <!-- 🔼 Back To Top -->
+  <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
+  <script src="js/main.js"></script>
+
+  <!-- ✅ Scripts -->
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    function setTheme(isDark) {
+      if (isDark) {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        themeToggle.textContent = '🌞';
+      } else {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        themeToggle.textContent = '🌙';
+      }
+    }
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const isDark = html.classList.contains('dark');
+        setTheme(!isDark);
+      });
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      setTheme(savedTheme === 'dark');
+    });
+
+    // Typewriter effect
+    const roles = [
+      "Aspiring Cloud Engineer",
+      "Full-Stack Developer in Progress",
+      "Adventure Enthusiast ",
+      "Tech Explorer | Lifelong Learner"
+    ];
+    let i = 0, j = 0, current = "", isDeleting = false;
+    function type() {
+      current = roles[i];
+      let display = current.substring(0, j);
+      document.getElementById("typing-text").textContent = display;
+      if (!isDeleting && j < current.length) {
+        j++;
+      } else if (isDeleting && j > 0) {
+        j--;
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) i = (i + 1) % roles.length;
+      }
+      setTimeout(type, isDeleting ? 100 : 200);
+    }
+    window.addEventListener("DOMContentLoaded", type);
+
+    // Back to Top
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>

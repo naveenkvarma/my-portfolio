@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naveen | Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+  <!-- ✅ Navbar -->
+  <header class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <h1 class="text-xl font-bold">What I've made!</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html#home" class="hover:text-blue-600">Home</a>
+        <a href="index.html#about" class="hover:text-blue-600">About</a>
+        <a href="projects.html" class="text-blue-600 font-semibold">Projects</a>
+        <a href="index.html#skills" class="hover:text-blue-600">Skills</a>
+        <a href="certifications.html" class="hover:text-blue-600">Certifications</a>
+        <a href="personal.html" class="hover:text-blue-600">More</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="ml-4 text-xl md:text-2xl">🌙</button>
+    </div>
+  </header>
+
+  <!-- ✅ Main Content -->
+  <main class="p-8 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-10">Projects</h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- 🔁 Project Card 1 -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+        <div>
+          <img src="assets/project1.jpg" alt="Project 1" class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-xl font-semibold mb-2">Serverless Feedback Form</h3>
+          <p class="text-sm mb-4">Built using AWS Lambda, API Gateway, DynamoDB, and Python. Form is CI/CD integrated with GitHub Actions & Docker.</p>
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full">AWS</span>
+            <span class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full">Python</span>
+            <span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 px-3 py-1 rounded-full">GitHub Actions</span>
+          </div>
+        </div>
+        <a href="https://github.com/naveenkvarma/Serverless-contact-form" target="_blank" class="text-blue-500 hover:underline mt-auto">🔗 View on GitHub</a>
+      </div>
+
+      <!-- 🔁 Project Card 2 -->
+       <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+        <div>
+          <img src="assets/project2.jpg" alt="Project 2" class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-xl font-semibold mb-2">E-commerce Return Rate Analysis</h3>
+          <p class="text-sm mb-4">Analyzed return trends using Python & Pandas. Created visuals using Power BI to provide insights into return behavior.</p>
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full">Python</span>
+            <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-3 py-1 rounded-full">Power BI</span>
+            <span class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full">Pandas</span>
+          </div>
+        </div>
+        <a href="https://github.com/naveenkvarma/DataAnalystIntern" target="_blank" class="text-blue-500 hover:underline mt-auto">🔗 View on GitHub</a>
+      </div>
+
+      <!-- 🔁 Project Card 3 -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+        <div>
+          <img src="assets/project3.png" alt="Project 3" class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-xl font-semibold mb-2">Discord Bots</h3>
+          <p class="text-sm mb-4">Built an interactive Discord bot tailored for various industries with detailed documentation and a public server, enhancing accessibility and engagement.</p>
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full">Python</span>
+            <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-3 py-1 rounded-full">Discord</span>
+            <span class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full">MongoDB</span>
+          </div>
+        </div>
+        <a href="https://github.com/naveenkvarma/Auto-ProBuddy" target="_blank" class="text-blue-500 hover:underline mt-auto">🔗 View on GitHub</a>
+      </div>
+
+      <!-- 🔁 Project Card 4 -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+        <div>
+          <img src="assets/project4.jpeg" alt="Project 4" class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-xl font-semibold mb-2">MAI Car</h3>
+          <p class="text-sm mb-4">Developed an automated robot car using Raspberry Pi (Python) and Arduino Uno (C) with Bluetooth control and real-time video transmission.</p>
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full">Raspberry Pi</span>
+            <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-3 py-1 rounded-full">Arduino Programming</span>
+            <span class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full">Bluetooth Module</span>
+          </div>
+        </div>
+        <a target="_blank" class="text-blue-500 hover:underline mt-auto"></a>
+      </div>
+
+      <!-- 🔁 Project Card 5 -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+        <div>
+          <img src="assets/project5.jpg" alt="Project 5" class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-xl font-semibold mb-2">Wine Quality Classification using ML models</h3>
+          <p class="text-sm mb-4">Predicted wine quality using machine learning algorithms in Python, applying feature engineering and model building for data-driven decision-making.</p>
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full">Python</span>
+            <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-3 py-1 rounded-full">ML Algorithms (Random Forest, SVM)</span>
+            <span class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full">Pandas & Scikit-learn</span>
+          </div>
+        </div>
+        <a href="https://github.com/naveenkvarma/Wine_Quality_Classification" target="_blank" class="text-blue-500 hover:underline mt-auto">🔗 View on GitHub</a>
+      </div>
+
+      <!-- 🔁 Project Card 6 -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+        <div>
+          <img src="assets/project6.jpg" alt="Project 6" class="w-full h-48 object-cover rounded-lg mb-4" />
+          <h3 class="text-xl font-semibold mb-2">Society Management System</h3>
+          <p class="text-sm mb-4">Automated residential society management system using agile methodologies, centralizing communication and resource allocation for enhanced community engagement.</p>
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full">PHP</span>
+            <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-3 py-1 rounded-full">MySQL</span>
+            <span class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full">Python, HTML & CSS</span>
+          </div>
+        </div>
+        <a href="https://github.com/naveenkvarma/ADTProject" target="_blank" class="text-blue-500 hover:underline mt-auto">🔗 View on GitHub</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer class="mt-16 py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm text-gray-600 dark:text-gray-300">
+    <p>
+      © 2025 Naveen Kumar Varma •
+    </p>
+  </footer>
+        <!-- 🔼 Back To Top -->
+  <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
+
+   <script>
+  // Back to Top
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

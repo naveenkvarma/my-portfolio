@@ -1,0 +1,111 @@
+<!-- skills.html -->
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Naveen Kumar Varma</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+  
+  <!-- ✅ NAVBAR -->
+  <header class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <h1 class="text-xl font-bold">Tech I Work With</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html#home" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="projects.html" class="hover:text-blue-600">Projects</a>
+        <a href="skills.html" class="text-blue-600 font-semibold">Skills</a>
+        <a href="certifications.html" class="hover:text-blue-600">Certifications</a>
+        <a href="personal.html" class="hover:text-blue-600">More</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="ml-4 text-xl md:text-2xl">🌙</button>
+    </div>
+  </header>
+
+  <!-- ✅ MAIN -->
+  <main class="p-8 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center">Skills</h2>
+
+    <div class="grid md:grid-cols-2 gap-10">
+
+      <!-- Programming -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+        <h3 class="text-xl font-semibold mb-3">👨‍💻 Programming</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full">Python</span>
+          <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full">C</span>
+          <span class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-3 py-1 rounded-full">HTML</span>
+          <span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 px-3 py-1 rounded-full">JavaScript</span>
+          <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-3 py-1 rounded-full">SQL</span>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+        <h3 class="text-xl font-semibold mb-3">🛠️ Tools</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200 px-3 py-1 rounded-full">Git</span>
+          <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full">GitHub</span>
+          <span class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full">VS Code</span>
+          <span class="bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 px-3 py-1 rounded-full">Postman</span>
+          <span class="bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200 px-3 py-1 rounded-full">Figma</span>
+        </div>
+      </div>
+
+      <!-- Cloud -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+        <h3 class="text-xl font-semibold mb-3 mt-8 md:mt-0">☁️ Cloud</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full">AWS</span>
+          <span class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full">Docker</span>
+          <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full">CI/CD</span>
+          <span class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-3 py-1 rounded-full">S3</span>
+          <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-3 py-1 rounded-full">Lambda</span>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between transform transition-transform duration-300 hover:scale-110 hover:shadow-lg">
+        <h3 class="text-xl font-semibold mb-3 mt-8 md:mt-0">💡 Soft Skills</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 px-3 py-1 rounded-full">Teamwork</span>
+          <span class="bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200 px-3 py-1 rounded-full">Leadership</span>
+          <span class="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full">Problem Solving</span>
+          <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full">Communication</span>
+          <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full">Adaptability</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ✅ FOOTER -->
+  <footer class="mt-16 py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm text-gray-600 dark:text-gray-300">
+    <p>© 2025 Naveen Kumar Varma</p>
+  </footer>
+        <!-- 🔼 Back To Top -->
+  <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
+
+   <script>
+  // Back to Top
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

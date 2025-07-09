@@ -1,0 +1,176 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Naveen Kumar Varma</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .glow {
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+    }
+  </style>
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+  
+  <!-- ✅ NAVBAR -->
+  <header class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <h1 class="text-xl font-bold">Find me more about here!</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html#home" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="text-blue-600 font-semibold">About</a>
+        <a href="projects.html" class="hover:text-blue-600">Projects</a>
+        <a href="skills.html" class="hover:text-blue-600">Skills</a>
+        <a href="certifications.html" class="hover:text-blue-600">Certifications</a>
+        <a href="personal.html" class="hover:text-blue-600">More</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="ml-4 text-xl md:text-2xl">🌙</button>
+    </div>
+  </header>
+
+  <main class="p-8 max-w-5xl mx-auto">
+    <!-- About Me -->
+    <section class="py-10">
+      <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
+      <p class="text-lg leading-relaxed mb-6">
+        I'm currently pursuing my <strong>MCA in Cloud Computing</strong> and passionate about building cloud-native applications, automation tools, and scalable web solutions. I enjoy taking part in hackathons, building real-time systems, and learning new tech that solves real problems.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section class="mt-10">
+        <h3 class="text-2xl font-bold mb-4">Education</h3>
+      <!-- PG -->
+      <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Master of Computer Applications (MCA) – Cloud Computing</h3>
+        <p class="text-base mb-1 flex items-center gap-2">
+          <img src="assets/mitadt.png" alt="MIT ADT" class="h-6 w-auto" />
+          MIT ADT University, Pune
+        </p>
+        <p class="text-sm mb-4 text-gray-600 dark:text-gray-400">Expected Graduation: 2026 | CGPA: 8.59 / 10</p>
+      </div>
+
+    <!-- UG -->
+      <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Bachelor of Science – Computer Science, Mathematics, Electronics</h3>
+        <p class="text-base mb-1 flex items-center gap-2">
+          <img src="assets/christlogo.png" alt="CHRIST" class="h-6 w-auto" />
+          CHRIST Deemed to be University, Bangalore
+        </p>
+        <p class="text-sm mb-4 text-gray-600 dark:text-gray-400">Graduated: 2024 | CGPA: 7.92 / 10</p>
+      </div>
+    </section>
+    <!-- 🔹 Experience -->
+     <section class="mt-10">
+        <h3 class="text-2xl font-bold mb-4">Experience</h3>
+        <!-- Sample Experience 1 -->
+         <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6">
+            <h4 class="text-lg font-semibold">Cloud Intern – ABC Cloud Solutions</h4>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Jan 2025 – Apr 2025</p>
+            <ul class="list-disc pl-5 space-y-1 text-base">
+                <li>Worked on deploying and monitoring serverless applications using AWS Lambda and CloudWatch.</li>
+                <li>Collaborated in a 3-member team to automate CI/CD using GitHub Actions.</li>
+                <li>Prepared dashboards with AWS CloudWatch Logs Insights for error tracking.</li>
+            </ul>
+        </div>
+        <!-- Sample Experience 2 -->
+         <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6">
+            <h4 class="text-lg font-semibold">Cloud Intern – ABC Cloud Solutions</h4>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Jan 2025 – Apr 2025</p>
+            <ul class="list-disc pl-5 space-y-1 text-base">
+                <li>Worked on deploying and monitoring serverless applications using AWS Lambda and CloudWatch.</li>
+                <li>Collaborated in a 3-member team to automate CI/CD using GitHub Actions.</li>
+                <li>Prepared dashboards with AWS CloudWatch Logs Insights for error tracking.</li>
+            </ul>
+        </div>
+    </section>
+    <!-- 🔹 Clubs & Extracurriculars -->
+<section class="mt-10">
+  <h3 class="text-2xl font-bold mb-4">Clubs & Extracurriculars</h3>
+
+  <div class="space-y-6">
+
+    <!-- Club 1 -->
+    <div class="bg-gray-100 dark:bg-gray-800 p-5 rounded-lg shadow">
+      <h4 class="text-lg font-semibold">PR & Sponsorship Team Member – AWS Cloud Club, MIT ADT</h4>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Aug 2024 – Present</p>
+      <ul class="list-disc pl-5 text-base space-y-1">
+        <li>Engaged in outreach and sponsorship activities for workshops and hackathons.</li>
+        <li>Collaborated in organizing the "AWS Demystified" workshop for 100+ students.</li>
+      </ul>
+    </div>
+
+    <!-- Club 2 -->
+    <div class="bg-gray-100 dark:bg-gray-800 p-5 rounded-lg shadow">
+      <h4 class="text-lg font-semibold">Volunteer – TECH FUSION Quiz (IT Club, MITCOM)</h4>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Oct 2024</p>
+      <ul class="list-disc pl-5 text-base space-y-1">
+        <li>Co-led coordination and scoring for online quiz competition.</li>
+        <li>Helped organize the final round with over 5 sub-rounds and cash prize distribution.</li>
+      </ul>
+    </div>
+
+    <!-- Activity 3 -->
+    <div class="bg-gray-100 dark:bg-gray-800 p-5 rounded-lg shadow">
+      <h4 class="text-lg font-semibold">Workshop Attendee – AWS Basics to Beyond</h4>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">April 2024</p>
+      <ul class="list-disc pl-5 text-base space-y-1">
+        <li>Participated in live deployment sessions using S3 and Lambda functions.</li>
+        <li>Interacted with AWS community mentors and gained project insights.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+    
+</main>
+
+  <!-- ✅ FOOTER -->
+  <footer class="mt-16 py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm text-gray-600 dark:text-gray-300">
+    <p>
+      © 2025 Naveen Kumar Varma •
+    </p>
+  </footer>
+    <!-- 🔼 Back To Top -->
+  <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+<script>
+  // Back to Top
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
+  <script src="js/main.js"></script>
+</body>
+</html>
