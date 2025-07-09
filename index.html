@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naveen Kumar Varma's | Portfolio</title>
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -51,7 +52,9 @@
         <a href="contact.html" class="hover:text-blue-600">Contact</a>
       </nav>
 
-      <!-- Mobile Nav & Theme Button -->
+      <button id="theme-toggle" class="ml-4 text-xl md:text-2xl">🌙</button>
+
+      <!-- Mobile Nav -->
       <div class="md:hidden flex items-center gap-2">
         <button id="menu-toggle" class="text-2xl focus:outline-none">☰</button>
         <button id="theme-toggle" class="text-xl">🌙</button>
@@ -143,78 +146,7 @@
   <!-- 🔼 Back To Top -->
   <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
 
-  <!-- ✅ JS -->
+  <!-- ✅ Load External JavaScript -->
   <script src="js/main.js"></script>
-  <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    function setTheme(isDark) {
-      if (isDark) {
-        html.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-        themeToggle.textContent = '🌞';
-      } else {
-        html.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-        themeToggle.textContent = '🌙';
-      }
-    }
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        const isDark = html.classList.contains('dark');
-        setTheme(!isDark);
-      });
-    }
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme');
-      setTheme(savedTheme === 'dark');
-    });
-
-    // Typewriter
-    const roles = [
-      "Aspiring Cloud Engineer",
-      "Full-Stack Developer in Progress",
-      "Adventure Enthusiast",
-      "Tech Explorer | Lifelong Learner"
-    ];
-    let i = 0, j = 0, current = "", isDeleting = false;
-    function type() {
-      current = roles[i];
-      document.getElementById("typing-text").textContent = current.substring(0, j);
-      if (!isDeleting && j < current.length) j++;
-      else if (isDeleting && j > 0) j--;
-      else {
-        isDeleting = !isDeleting;
-        if (!isDeleting) i = (i + 1) % roles.length;
-      }
-      setTimeout(type, isDeleting ? 100 : 200);
-    }
-    window.addEventListener("DOMContentLoaded", type);
-
-    // Back to Top
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    // ✅ Mobile Nav Toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
-    const navLinks = mobileNav.querySelectorAll('a');
-
-    menuToggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('hidden');
-    });
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.add('hidden');
-      });
-    });
-  </script>
 </body>
 </html>
