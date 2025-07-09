@@ -53,21 +53,20 @@
 
       <!-- Mobile Nav Toggle -->
       <div class="md:hidden flex items-center gap-4">
-        <button id="menu-open" class="text-2xl">☰</button>
-        <button id="menu-close" class="text-2xl hidden">✖</button>
+        <button id="menu-toggle" class="text-2xl focus:outline-none">☰</button>
         <button id="theme-toggle" class="text-xl">🌙</button>
       </div>
     </div>
 
     <!-- Mobile Nav Links -->
-    <div id="mobile-nav" class="md:hidden hidden px-6 py-4 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 space-y-2">
-      <a href="#home" class="block hover:text-blue-600">Home</a>
-      <a href="about.html" class="block hover:text-blue-600">About</a>
-      <a href="projects.html" class="block hover:text-blue-600">Projects</a>
-      <a href="skills.html" class="block hover:text-blue-600">Skills</a>
-      <a href="certifications.html" class="block hover:text-blue-600">Certifications</a>
-      <a href="personal.html" class="block hover:text-blue-600">More</a>
-      <a href="contact.html" class="block hover:text-blue-600">Contact</a>
+    <div id="mobile-nav" class="md:hidden hidden flex flex-col px-6 py-4 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 space-y-2">
+      <a href="#home" class="hover:text-blue-600">Home</a>
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="projects.html" class="hover:text-blue-600">Projects</a>
+      <a href="skills.html" class="hover:text-blue-600">Skills</a>
+      <a href="certifications.html" class="hover:text-blue-600">Certifications</a>
+      <a href="personal.html" class="hover:text-blue-600">More</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
     </div>
   </header>
 
@@ -145,8 +144,6 @@
   <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
 
   <!-- ✅ JS -->
-  <script src="js/main.js"></script>
-
   <script>
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
@@ -207,18 +204,10 @@
     });
 
     // Mobile Nav Toggle
-    const menuOpen = document.getElementById('menu-open');
-    const menuClose = document.getElementById('menu-close');
+    const menuToggle = document.getElementById('menu-toggle');
     const mobileNav = document.getElementById('mobile-nav');
-    menuOpen.addEventListener('click', () => {
-      mobileNav.classList.remove('hidden');
-      menuOpen.classList.add('hidden');
-      menuClose.classList.remove('hidden');
-    });
-    menuClose.addEventListener('click', () => {
-      mobileNav.classList.add('hidden');
-      menuOpen.classList.remove('hidden');
-      menuClose.classList.add('hidden');
+    menuToggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
     });
   </script>
 </body>
