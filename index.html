@@ -50,24 +50,23 @@
         <a href="personal.html" class="hover:text-blue-600">More</a>
         <a href="contact.html" class="hover:text-blue-600">Contact</a>
       </nav>
-      <!-- Theme Toggle Button -->
-      <button id="theme-toggle" class="ml-4 text-xl md:text-2xl">🌙</button>
 
-      <!-- Mobile Nav Toggle -->
-      <div class="md:hidden flex items-center gap-4">
+      <!-- Mobile Nav & Theme Button -->
+      <div class="md:hidden flex items-center gap-2">
         <button id="menu-toggle" class="text-2xl focus:outline-none">☰</button>
+        <button id="theme-toggle" class="text-xl">🌙</button>
       </div>
     </div>
 
     <!-- Mobile Nav Links -->
-    <div id="mobile-nav" class="md:hidden hidden flex flex-col px-6 py-4 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 space-y-2">
-      <a href="#home" class="hover:text-blue-600">Home</a>
-      <a href="about.html" class="hover:text-blue-600">About</a>
-      <a href="projects.html" class="hover:text-blue-600">Projects</a>
-      <a href="skills.html" class="hover:text-blue-600">Skills</a>
-      <a href="certifications.html" class="hover:text-blue-600">Certifications</a>
-      <a href="personal.html" class="hover:text-blue-600">More</a>
-      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+    <div id="mobile-nav" class="md:hidden hidden absolute top-16 left-0 w-full px-6 py-4 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 shadow-lg z-50">
+      <a href="#home" class="block py-1 hover:text-blue-600">Home</a>
+      <a href="about.html" class="block py-1 hover:text-blue-600">About</a>
+      <a href="projects.html" class="block py-1 hover:text-blue-600">Projects</a>
+      <a href="skills.html" class="block py-1 hover:text-blue-600">Skills</a>
+      <a href="certifications.html" class="block py-1 hover:text-blue-600">Certifications</a>
+      <a href="personal.html" class="block py-1 hover:text-blue-600">More</a>
+      <a href="contact.html" class="block py-1 hover:text-blue-600">Contact</a>
     </div>
   </header>
 
@@ -109,7 +108,7 @@
       </div>
     </section>
 
-    <!-- 🧠 About Me in Glance Cards -->
+    <!-- 🧠 Glance Cards -->
     <section class="mt-10 grid md:grid-cols-3 gap-6 text-center">
       <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow hover:scale-105 transition">
         <h3 class="text-xl font-semibold mb-2">🎯 Career Focus</h3>
@@ -125,7 +124,7 @@
       </div>
     </section>
 
-    <!-- 💬 Motivational Quote CTA -->
+    <!-- 💬 Quote CTA -->
     <section class="mt-16 text-center bg-blue-50 dark:bg-blue-900 p-6 rounded-lg shadow">
       <h2 class="text-2xl font-bold text-blue-700 dark:text-blue-200">
         “The best way to predict the future is to build it.”
@@ -143,8 +142,9 @@
 
   <!-- 🔼 Back To Top -->
   <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
-  <script src="js/main.js"></script>
+
   <!-- ✅ JS -->
+  <script src="js/main.js"></script>
   <script>
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
@@ -171,23 +171,20 @@
       setTheme(savedTheme === 'dark');
     });
 
-    // Typewriter Effect
+    // Typewriter
     const roles = [
       "Aspiring Cloud Engineer",
       "Full-Stack Developer in Progress",
-      "Adventure Enthusiast ",
+      "Adventure Enthusiast",
       "Tech Explorer | Lifelong Learner"
     ];
     let i = 0, j = 0, current = "", isDeleting = false;
     function type() {
       current = roles[i];
-      let display = current.substring(0, j);
-      document.getElementById("typing-text").textContent = display;
-      if (!isDeleting && j < current.length) {
-        j++;
-      } else if (isDeleting && j > 0) {
-        j--;
-      } else {
+      document.getElementById("typing-text").textContent = current.substring(0, j);
+      if (!isDeleting && j < current.length) j++;
+      else if (isDeleting && j > 0) j--;
+      else {
         isDeleting = !isDeleting;
         if (!isDeleting) i = (i + 1) % roles.length;
       }
@@ -204,11 +201,19 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Mobile Nav Toggle
+    // ✅ Mobile Nav Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileNav = document.getElementById('mobile-nav');
+    const navLinks = mobileNav.querySelectorAll('a');
+
     menuToggle.addEventListener('click', () => {
       mobileNav.classList.toggle('hidden');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+      });
     });
   </script>
 </body>
