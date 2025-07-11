@@ -1,20 +1,13 @@
 .badge {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-    border-radius: 9999px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    background-color: #f3f4f6;
-    color: #1f2937;
-  }
-  @media (prefers-color-scheme: dark) {
-    .badge {
-      background-color: #374151;
-      color: #e5e7eb;
-    }
+  padding: .25rem .75rem;
+  border-radius: 9999px;
+  font-size: .875rem;
+  font-weight: 500;
+  background-color: #f3f4f6;
+  color: #1f2937;
 }
-html {
-  scroll-behavior: smooth;
+@media (prefers-color-scheme: dark) {
+  .badge { background-color: #374151; color: #e5e7eb; }
 }
+html { scroll-behavior: smooth; }
+#mobile-nav.hidden { display: none; }

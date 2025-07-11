@@ -5,34 +5,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Naveen Kumar Varma</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    .glow {
-      box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
-    }
-  </style>
-  <style>
-  html {
-    scroll-behavior: smooth;
-  }
-</style>
-<!-- AOS Animation Library -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { darkMode: 'class' };
+    tailwind.config = {
+      darkMode: 'class',
+    };
   </script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-gradient-to-br from-gray-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-  
-  <!-- ✅ NAVBAR -->
+
+<body class="bg-gradient-to-tr from-gray-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 transition duration-300">
+
+  <!-- ✅ Navbar -->
   <header class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-      <h1 class="text-xl font-bold">Find me more about here!</h1>
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+      <h1 class="text-xl font-bold">About Me</h1>
+      <div class="flex items-center gap-3">
+        <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
+        <button id="theme-toggle" class="text-xl md:text-2xl">🌙</button>
+      </div>
       <nav class="hidden md:flex space-x-6">
         <a href="index.html#home" class="hover:text-blue-600">Home</a>
         <a href="about.html" class="text-blue-600 font-semibold">About</a>
@@ -42,7 +33,17 @@
         <a href="personal.html" class="hover:text-blue-600">More</a>
         <a href="contact.html" class="hover:text-blue-600">Contact</a>
       </nav>
-      <button id="theme-toggle" class="ml-4 text-xl md:text-2xl">🌙</button>
+    </div>
+
+    <!-- ✅ Mobile Nav -->
+    <div id="mobile-nav" class="hidden md:hidden bg-white dark:bg-gray-900 px-6 py-4 space-y-2">
+      <a href="index.html#home" class="block hover:text-blue-600">Home</a>
+      <a href="about.html" class="block text-blue-600 font-semibold">About</a>
+      <a href="projects.html" class="block hover:text-blue-600">Projects</a>
+      <a href="skills.html" class="block hover:text-blue-600">Skills</a>
+      <a href="certifications.html" class="block hover:text-blue-600">Certifications</a>
+      <a href="personal.html" class="block hover:text-blue-600">More</a>
+      <a href="contact.html" class="block hover:text-blue-600">Contact</a>
     </div>
   </header>
 
@@ -59,7 +60,7 @@
     <section class="mt-10">
         <h3 class="text-2xl font-bold mb-4">Education</h3>
       <!-- PG -->
-      <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+      <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6">
         <h3 class="text-xl font-semibold mb-2">Master of Computer Applications (MCA) – Cloud Computing</h3>
         <p class="text-base mb-1 flex items-center gap-2">
           <img src="assets/mitadt.png" alt="MIT ADT" class="h-6 w-auto" />
@@ -69,7 +70,7 @@
       </div>
 
     <!-- UG -->
-      <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+      <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6">
         <h3 class="text-xl font-semibold mb-2">Bachelor of Science – Computer Science, Mathematics, Electronics</h3>
         <p class="text-base mb-1 flex items-center gap-2">
           <img src="assets/christlogo.png" alt="CHRIST" class="h-6 w-auto" />

@@ -1,140 +1,79 @@
-// ------------------ THEME TOGGLE + TIME BASED ------------------
+// Theme toggle + time‑based
 const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
-
-function applyTimeBasedTheme() {
+function applyTheme() {
   const hour = new Date().getHours();
-  const isNight = hour < 6 || hour >= 18;
-  if (isNight) {
-    html.classList.add('dark');
-    if (themeToggle) themeToggle.textContent = '🌞';
-  } else {
-    html.classList.remove('dark');
-    if (themeToggle) themeToggle.textContent = '🌙';
-  }
+  const isDark = html.classList.contains('dark') || hour >= 18 || hour < 6;
+  html.classList.toggle('dark', isDark);
+  if (themeToggle) themeToggle.textContent = isDark ? '🌞' : '🌙';
 }
-
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
-    const isDark = html.classList.contains('dark');
-    if (isDark) {
-      html.classList.remove('dark');
-      themeToggle.textContent = '🌙';
-    } else {
-      html.classList.add('dark');
-      themeToggle.textContent = '🌞';
-    }
+    html.classList.toggle('dark');
+    themeToggle.textContent = html.classList.contains('dark') ? '🌞' : '🌙';
   });
 }
+window.addEventListener('DOMContentLoaded', applyTheme);
 
-window.addEventListener('DOMContentLoaded', applyTimeBasedTheme);
-
-// ------------------ TYPEWRITER EFFECT ------------------
-const roles = [
-  "Aspiring Cloud Engineer",
-  "Full-Stack Developer in Progress",
-  "Adventure Enthusiast",
-  "Tech Explorer | Lifelong Learner"
-];
-let i = 0, j = 0, current = "", isDeleting = false;
-
-function type() {
-  current = roles[i];
-  const display = current.substring(0, j);
-  const typingText = document.getElementById("typing-text");
-  if (typingText) typingText.textContent = display;
-
-  if (!isDeleting && j < current.length) {
-    j++;
-  } else if (isDeleting && j > 0) {
-    j--;
-  } else {
-    isDeleting = !isDeleting;
-    if (!isDeleting) i = (i + 1) % roles.length;
-  }
-  setTimeout(type, isDeleting ? 100 : 200);
+// MOBILE NAV TOGGLE
+const menuToggle = document.getElementById('menu-toggle');
+const mobileNav = document.getElementById('mobile-nav');
+if (menuToggle && mobileNav) {
+  menuToggle.addEventListener('click', () => {
+    mobileNav.classList.toggle('hidden');
+    menuToggle.textContent = mobileNav.classList.contains('hidden') ? '☰' : '✖';
+  });
+  mobileNav.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      mobileNav.classList.add('hidden');
+      menuToggle.textContent = '☰';
+    })
+  );
 }
 
-window.addEventListener("DOMContentLoaded", type);
-
-// ------------------ BACK TO TOP ------------------
+// BACK TO TOP
 const backToTop = document.getElementById("backToTop");
 if (backToTop) {
   window.addEventListener("scroll", () => {
     backToTop.style.display = window.scrollY > 300 ? "block" : "none";
   });
-
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 }
 
-// ------------------ MOBILE NAV TOGGLE ------------------
-const menuToggle = document.getElementById('menu-toggle');
-const mobileNav = document.getElementById('mobile-nav');
-
-if (menuToggle && mobileNav) {
-  menuToggle.addEventListener('click', () => {
-    mobileNav.classList.toggle('hidden');
-  });
-
-  const navLinks = mobileNav.querySelectorAll('a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.add('hidden');
-    });
-  });
+// TYPEWRITER EFFECT (INDEX ONLY)
+const txtEl = document.getElementById("typing-text");
+if (txtEl) {
+  const roles = ["Aspiring Cloud Engineer", "Full‑Stack Dev", "Tech Explorer", "Lifelong Learner"];
+  let i = 0, j = 0, del = false;
+  function type() {
+    const full = roles[i];
+    txtEl.textContent = full.substring(0, j);
+    if (!del && j++ === full.length) del = true;
+    else if (del && j-- === 0) { del = false; i = (i + 1) % roles.length; }
+    setTimeout(type, del ? 100 : 200);
+  }
+  type();
 }
 
-// ------------------ CAROUSEL ------------------
-const carousel = document.getElementById('carousel');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-const dots = document.querySelectorAll('#dots .dot');
-let autoSlide;
-let index = 0;
-
-if (carousel && prevBtn && nextBtn && dots.length > 0) {
-  const slides = carousel.children;
-  const totalSlides = slides.length;
-
-  function updateSlide(i) {
-    index = i;
-    carousel.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach(dot => dot.classList.remove('bg-gray-400'));
-    if (dots[index]) {
-      dots[index].classList.add('bg-gray-400');
-    }
+// CAROUSEL (LANGUAGE / GALLERY)
+const carousels = document.querySelectorAll('.carousel');
+carousels.forEach(c => {
+  const track = c.querySelector('.carousel-track');
+  const prev = c.querySelector('.carousel-prev');
+  const next = c.querySelector('.carousel-next');
+  const dots = c.querySelectorAll('.carousel-dot');
+  let idx = 0;
+  const total = track.children.length;
+  function update(i) {
+    idx = (i + total) % total;
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dots.forEach(d => d.classList.remove('bg-gray-400'));
+    dots[idx].classList.add('bg-gray-400');
   }
-
-  nextBtn.addEventListener('click', () => {
-    index = (index + 1) % totalSlides;
-    updateSlide(index);
-  });
-
-  prevBtn.addEventListener('click', () => {
-    index = (index - 1 + totalSlides) % totalSlides;
-    updateSlide(index);
-  });
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => updateSlide(i));
-  });
-
-  function startAutoSlide() {
-    autoSlide = setInterval(() => {
-      index = (index + 1) % totalSlides;
-      updateSlide(index);
-    }, 4000);
-  }
-
-  function stopAutoSlide() {
-    clearInterval(autoSlide);
-  }
-
-  carousel.parentElement.addEventListener('mouseenter', stopAutoSlide);
-  carousel.parentElement.addEventListener('mouseleave', startAutoSlide);
-
-  updateSlide(index);
-  startAutoSlide();
-}
+  next.addEventListener('click', () => update(idx + 1));
+  prev.addEventListener('click', () => update(idx - 1));
+  dots.forEach((d,i) => d.addEventListener('click', () => update(i)));
+  let auto = setInterval(()=>update(idx+1),4000);
+  c.addEventListener('mouseenter', () => clearInterval(auto));
+  c.addEventListener('mouseleave', () => auto = setInterval(()=>update(idx+1),4000));
+});
