@@ -1,4 +1,4 @@
-// Theme toggle + time‑based
+// 🌙 Theme Toggle
 const desktopToggle = document.getElementById('theme-toggle-desktop');
 const mobileToggle = document.getElementById('theme-toggle-mobile');
 const html = document.documentElement;
@@ -6,7 +6,15 @@ const html = document.documentElement;
 function applyTheme() {
   const hour = new Date().getHours();
   const isDark = html.classList.contains('dark') || hour >= 18 || hour < 6;
-  html.classList.toggle('dark', isDark);
+
+  // ✅ Apply dark class conditionally
+  if (isDark) {
+    html.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+  }
+
+  // ✅ Sync both buttons
   [desktopToggle, mobileToggle].forEach(btn => {
     if (btn) btn.textContent = isDark ? '🌞' : '🌙';
   });
@@ -25,14 +33,17 @@ if (mobileToggle) mobileToggle.addEventListener('click', toggleTheme);
 
 window.addEventListener('DOMContentLoaded', applyTheme);
 
-// MOBILE NAV TOGGLE
+
+// 📱 MOBILE NAV TOGGLE
 const menuToggle = document.getElementById('menu-toggle');
 const mobileNav = document.getElementById('mobile-nav');
+
 if (menuToggle && mobileNav) {
   menuToggle.addEventListener('click', () => {
     mobileNav.classList.toggle('hidden');
     menuToggle.textContent = mobileNav.classList.contains('hidden') ? '☰' : '✖';
   });
+
   mobileNav.querySelectorAll('a').forEach(a =>
     a.addEventListener('click', () => {
       mobileNav.classList.add('hidden');
@@ -40,7 +51,6 @@ if (menuToggle && mobileNav) {
     })
   );
 }
-
 
 // BACK TO TOP
 const backToTop = document.getElementById("backToTop");
