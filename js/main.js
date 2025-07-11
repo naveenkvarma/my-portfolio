@@ -1,18 +1,28 @@
 // Theme toggle + time‑based
-const themeToggle = document.getElementById('theme-toggle');
+const desktopToggle = document.getElementById('theme-toggle-desktop');
+const mobileToggle = document.getElementById('theme-toggle-mobile');
 const html = document.documentElement;
+
 function applyTheme() {
   const hour = new Date().getHours();
   const isDark = html.classList.contains('dark') || hour >= 18 || hour < 6;
   html.classList.toggle('dark', isDark);
-  if (themeToggle) themeToggle.textContent = isDark ? '🌞' : '🌙';
-}
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    html.classList.toggle('dark');
-    themeToggle.textContent = html.classList.contains('dark') ? '🌞' : '🌙';
+  [desktopToggle, mobileToggle].forEach(btn => {
+    if (btn) btn.textContent = isDark ? '🌞' : '🌙';
   });
 }
+
+function toggleTheme() {
+  html.classList.toggle('dark');
+  const isDark = html.classList.contains('dark');
+  [desktopToggle, mobileToggle].forEach(btn => {
+    if (btn) btn.textContent = isDark ? '🌞' : '🌙';
+  });
+}
+
+if (desktopToggle) desktopToggle.addEventListener('click', toggleTheme);
+if (mobileToggle) mobileToggle.addEventListener('click', toggleTheme);
+
 window.addEventListener('DOMContentLoaded', applyTheme);
 
 // MOBILE NAV TOGGLE
@@ -30,6 +40,7 @@ if (menuToggle && mobileNav) {
     })
   );
 }
+
 
 // BACK TO TOP
 const backToTop = document.getElementById("backToTop");
