@@ -1,56 +1,49 @@
-// 🌙 Theme Toggle
-const desktopToggle = document.getElementById('theme-toggle-desktop');
-const mobileToggle = document.getElementById('theme-toggle-mobile');
-const html = document.documentElement;
+// main.js
+document.addEventListener('DOMContentLoaded', () => {
+  const html = document.documentElement;
+  const desktopToggle = document.getElementById('theme-toggle-desktop');
+  const mobileToggle = document.getElementById('theme-toggle-mobile');
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
 
-function applyTheme() {
+  // 🌓 Apply theme on load
   const hour = new Date().getHours();
   const isDark = html.classList.contains('dark') || hour >= 18 || hour < 6;
+  if (isDark) html.classList.add('dark');
+  else html.classList.remove('dark');
 
-  // ✅ Apply dark class conditionally
-  if (isDark) {
-    html.classList.add('dark');
-  } else {
-    html.classList.remove('dark');
+  // 🌗 Set icons
+  const setIcons = () => {
+    const isDark = html.classList.contains('dark');
+    if (desktopToggle) desktopToggle.textContent = isDark ? '🌞' : '🌙';
+    if (mobileToggle) mobileToggle.textContent = isDark ? '🌞' : '🌙';
+  };
+  setIcons();
+
+  // 🔁 Toggle theme
+  function toggleTheme() {
+    html.classList.toggle('dark');
+    setIcons();
   }
 
-  // ✅ Sync both buttons
-  [desktopToggle, mobileToggle].forEach(btn => {
-    if (btn) btn.textContent = isDark ? '🌞' : '🌙';
-  });
-}
+  if (desktopToggle) desktopToggle.addEventListener('click', toggleTheme);
+  if (mobileToggle) mobileToggle.addEventListener('click', toggleTheme);
 
-function toggleTheme() {
-  html.classList.toggle('dark');
-  const isDark = html.classList.contains('dark');
-  [desktopToggle, mobileToggle].forEach(btn => {
-    if (btn) btn.textContent = isDark ? '🌞' : '🌙';
-  });
-}
+  // 📱 Mobile nav toggle
+  if (menuToggle && mobileNav) {
+    menuToggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+      menuToggle.textContent = mobileNav.classList.contains('hidden') ? '☰' : '✖';
+    });
 
-if (desktopToggle) desktopToggle.addEventListener('click', toggleTheme);
-if (mobileToggle) mobileToggle.addEventListener('click', toggleTheme);
-
-window.addEventListener('DOMContentLoaded', applyTheme);
-
-
-// 📱 MOBILE NAV TOGGLE
-const menuToggle = document.getElementById('menu-toggle');
-const mobileNav = document.getElementById('mobile-nav');
-
-if (menuToggle && mobileNav) {
-  menuToggle.addEventListener('click', () => {
-    mobileNav.classList.toggle('hidden');
-    menuToggle.textContent = mobileNav.classList.contains('hidden') ? '☰' : '✖';
-  });
-
-  mobileNav.querySelectorAll('a').forEach(a =>
-    a.addEventListener('click', () => {
-      mobileNav.classList.add('hidden');
-      menuToggle.textContent = '☰';
-    })
-  );
-}
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+        menuToggle.textContent = '☰';
+      });
+    });
+  }
+});
 
 // BACK TO TOP
 const backToTop = document.getElementById("backToTop");

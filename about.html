@@ -12,41 +12,37 @@
   </script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body class="bg-gradient-to-tr from-gray-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 transition duration-300">
 
-  <!-- ✅ NAVBAR -->
+  <!-- ✅ HEADER -->
   <header class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-      <h1 class="text-xl font-bold">Find me more about here!</h1>
+      <h1 class="text-xl font-bold">Find more about me!</h1>
 
-      <!-- Right Section: Desktop + Mobile Nav -->
-      <div class="flex items-center">
-        <!-- Desktop Nav -->
-        <div class="hidden md:flex items-center space-x-6">
-          <a href="#home" class="hover:text-blue-600">Home</a>
+      <!-- Desktop Nav + Toggle -->
+      <div class="hidden md:flex items-center space-x-6">
+        <nav class="flex space-x-6">
+          <a href="index.html" class="hover:text-blue-600">Home</a>
           <a href="about.html" class="hover:text-blue-600">About</a>
           <a href="projects.html" class="hover:text-blue-600">Projects</a>
           <a href="skills.html" class="hover:text-blue-600">Skills</a>
           <a href="certifications.html" class="hover:text-blue-600">Certifications</a>
           <a href="personal.html" class="hover:text-blue-600">More</a>
           <a href="contact.html" class="hover:text-blue-600">Contact</a>
-          <!-- Desktop Theme Toggle -->
-          <button id="theme-toggle-desktop" class="text-2xl hidden md:inline">🌙</button>
-        </div>
+        </nav>
+        <button id="theme-toggle-desktop" class="text-2xl">🌙</button>
+      </div>
 
-        <!-- Mobile Nav Toggle -->
-        <div class="md:hidden flex items-center gap-2">
-          <button id="menu-toggle" class="text-2xl focus:outline-none">☰</button>
-          <!-- Mobile Theme Toggle -->
-          <button id="theme-toggle-mobile" class="text-xl md:hidden">🌙</button>
-        </div>
+      <!-- Mobile Menu + Theme -->
+      <div class="md:hidden flex items-center gap-2">
+        <button id="menu-toggle" class="text-2xl">☰</button>
+        <button id="theme-toggle-mobile" class="text-xl">🌙</button>
       </div>
     </div>
 
     <!-- Mobile Nav Links -->
     <div id="mobile-nav" class="md:hidden hidden px-6 py-4 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 shadow-lg z-50">
-      <a href="#home" class="block py-1 hover:text-blue-600">Home</a>
+      <a href="index.html" class="block py-1 hover:text-blue-600">Home</a>
       <a href="about.html" class="block py-1 hover:text-blue-600">About</a>
       <a href="projects.html" class="block py-1 hover:text-blue-600">Projects</a>
       <a href="skills.html" class="block py-1 hover:text-blue-600">Skills</a>
@@ -148,30 +144,65 @@
 
   <!-- ✅ FOOTER -->
   <footer class="mt-16 py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm text-gray-600 dark:text-gray-300">
-    <p>© 2025 Naveen Kumar Varma •</p>
+    <p>© 2025 Naveen Kumar Varma</p>
   </footer>
 
   <!-- 🔼 Back To Top -->
   <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
 
-  <!-- Scroll animations -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Scripts -->
   <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const html = document.documentElement;
+      const desktopToggle = document.getElementById('theme-toggle-desktop');
+      const mobileToggle = document.getElementById('theme-toggle-mobile');
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
 
-  <!-- Back to Top -->
-  <script>
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // 🌓 Apply theme on load
+      const hour = new Date().getHours();
+      const isDark = html.classList.contains('dark') || hour >= 18 || hour < 6;
+      if (isDark) html.classList.add('dark');
+      else html.classList.remove('dark');
+
+      const setIcons = () => {
+        const isDark = html.classList.contains('dark');
+        if (desktopToggle) desktopToggle.textContent = isDark ? '🌞' : '🌙';
+        if (mobileToggle) mobileToggle.textContent = isDark ? '🌞' : '🌙';
+      };
+      setIcons();
+
+      function toggleTheme() {
+        html.classList.toggle('dark');
+        setIcons();
+      }
+
+      if (desktopToggle) desktopToggle.addEventListener('click', toggleTheme);
+      if (mobileToggle) mobileToggle.addEventListener('click', toggleTheme);
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener('click', () => {
+          mobileNav.classList.toggle('hidden');
+          menuToggle.textContent = mobileNav.classList.contains('hidden') ? '☰' : '✖';
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.add('hidden');
+            menuToggle.textContent = '☰';
+          });
+        });
+      }
+
+      // Back to Top
+      const backToTop = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+      });
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     });
   </script>
-
-  <!-- Main JS (toggle + nav) -->
-  <script src="js/main.js"></script>
 </body>
 </html>
