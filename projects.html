@@ -6,9 +6,7 @@
   <title>Naveen | Projects</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class',
-    };
+    tailwind.config = { darkMode: 'class' };
   </script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -19,6 +17,8 @@
   <header class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
       <h1 class="text-xl font-bold">What I've made!</h1>
+
+      <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-6">
         <a href="index.html#home" class="hover:text-blue-600">Home</a>
         <a href="index.html#about" class="hover:text-blue-600">About</a>
@@ -28,7 +28,26 @@
         <a href="personal.html" class="hover:text-blue-600">More</a>
         <a href="contact.html" class="hover:text-blue-600">Contact</a>
       </nav>
-      <button id="theme-toggle" class="ml-4 text-xl md:text-2xl">🌙</button>
+
+      <!-- Desktop Theme Toggle -->
+      <button id="theme-toggle-desktop" class="ml-4 text-xl md:text-2xl hidden md:inline">🌙</button>
+
+      <!-- Mobile Nav + Toggle -->
+      <div class="md:hidden flex items-center gap-2">
+        <button id="menu-toggle" class="text-2xl">☰</button>
+        <button id="theme-toggle-mobile" class="text-xl">🌙</button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Links -->
+    <div id="mobile-nav" class="md:hidden hidden absolute top-16 left-0 w-full px-6 py-4 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 shadow-lg z-50">
+      <a href="index.html#home" class="block py-1 hover:text-blue-600">Home</a>
+      <a href="index.html#about" class="block py-1 hover:text-blue-600">About</a>
+      <a href="projects.html" class="block py-1 text-blue-600 font-semibold">Projects</a>
+      <a href="index.html#skills" class="block py-1 hover:text-blue-600">Skills</a>
+      <a href="certifications.html" class="block py-1 hover:text-blue-600">Certifications</a>
+      <a href="personal.html" class="block py-1 hover:text-blue-600">More</a>
+      <a href="contact.html" class="block py-1 hover:text-blue-600">Contact</a>
     </div>
   </header>
 
@@ -132,15 +151,54 @@
 
   <!-- ✅ Footer -->
   <footer class="mt-16 py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm text-gray-600 dark:text-gray-300">
-    <p>
-      © 2025 Naveen Kumar Varma •
-    </p>
+    <p>© 2025 Naveen Kumar Varma •</p>
   </footer>
-        <!-- 🔼 Back To Top -->
-  <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
 
-   <script>
-  // Back to Top
+<!-- ✅ JS Script Inline -->
+  <script>
+    // Theme Toggle
+    const desktopToggle = document.getElementById('theme-toggle-desktop');
+    const mobileToggle = document.getElementById('theme-toggle-mobile');
+    const html = document.documentElement;
+
+    function applyTheme() {
+      const hour = new Date().getHours();
+      const isDark = html.classList.contains('dark') || hour >= 18 || hour < 6;
+      html.classList.toggle('dark', isDark);
+      [desktopToggle, mobileToggle].forEach(btn => {
+        if (btn) btn.textContent = isDark ? '🌞' : '🌙';
+      });
+    }
+
+    function toggleTheme() {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      [desktopToggle, mobileToggle].forEach(btn => {
+        if (btn) btn.textContent = isDark ? '🌞' : '🌙';
+      });
+    }
+
+    if (desktopToggle) desktopToggle.addEventListener('click', toggleTheme);
+    if (mobileToggle) mobileToggle.addEventListener('click', toggleTheme);
+    window.addEventListener('DOMContentLoaded', applyTheme);
+
+    // Mobile Nav Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+        menuToggle.textContent = mobileNav.classList.contains('hidden') ? '☰' : '✖';
+      });
+      mobileNav.querySelectorAll('a').forEach(a =>
+        a.addEventListener('click', () => {
+          mobileNav.classList.add('hidden');
+          menuToggle.textContent = '☰';
+        })
+      );
+    }
+
+    // Back to Top
     const backToTop = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
       backToTop.style.display = window.scrollY > 300 ? "block" : "none";
@@ -148,8 +206,6 @@
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-</script>
-
-  <script src="js/main.js"></script>
+  </script>
 </body>
 </html>

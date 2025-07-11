@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>More About Me | Naveen</title>
   
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class'
-    };
+    tailwind.config = { darkMode: 'class' };
   </script>
-
-  <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -23,6 +18,7 @@
   <header class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
       <h1 class="text-xl font-bold">Explore More</h1>
+
       <nav class="hidden md:flex space-x-6">
         <a href="index.html" class="hover:text-blue-600">Home</a>
         <a href="about.html" class="hover:text-blue-600">About</a>
@@ -33,8 +29,23 @@
         <a href="contact.html" class="hover:text-blue-600">Contact</a>
       </nav>
 
-      <!-- Theme Toggle Button -->
-      <button id="theme-toggle" class="ml-4 text-xl md:text-2xl">🌙</button>
+      <!-- Theme & Mobile -->
+      <button id="theme-toggle-desktop" class="ml-4 text-xl md:text-2xl hidden md:inline">🌙</button>
+      <div class="md:hidden flex items-center gap-2">
+        <button id="menu-toggle" class="text-2xl">☰</button>
+        <button id="theme-toggle-mobile" class="text-xl">🌙</button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-nav" class="md:hidden hidden absolute top-16 left-0 w-full px-6 py-4 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 shadow-lg z-50">
+      <a href="index.html" class="block py-1 hover:text-blue-600">Home</a>
+      <a href="about.html" class="block py-1 hover:text-blue-600">About</a>
+      <a href="projects.html" class="block py-1 hover:text-blue-600">Projects</a>
+      <a href="index.html#skills" class="block py-1 hover:text-blue-600">Skills</a>
+      <a href="certifications.html" class="block py-1 hover:text-blue-600">Certifications</a>
+      <a href="personal.html" class="block py-1 text-blue-600 font-semibold">More</a>
+      <a href="contact.html" class="block py-1 hover:text-blue-600">Contact</a>
     </div>
   </header>
 
@@ -61,7 +72,7 @@
         <li>🎵 Listening to Lo-fi and Instrumentals</li>
       </ul>
     </section>
-    <!-- 🌐 Languages -->
+<!-- 🌐 Languages -->
 <section id="languages">
   <h2 class="text-3xl font-bold mb-6">🌐 Languages Known</h2>
 
@@ -129,45 +140,81 @@
     <section id="gallery" class="py-16 px-4 max-w-5xl mx-auto">
       <h2 class="text-4xl font-bold mb-6 text-center">🎨 Photo Gallery</h2>
 
-      <!-- Carousel Container -->
       <div class="relative w-full max-w-2xl mx-auto overflow-hidden rounded-lg shadow-lg">
         <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
-          <img src="assets/project1.jpg" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 1" loading="lazy">
-          <img src="assets/project2.jpg" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 2" loading="lazy">
-          <img src="assets/project3.png" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 3" loading="lazy">
-          <img src="assets/project1.jpg" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 4" loading="lazy">
-          <img src="assets/project2.jpg" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 5" loading="lazy">
-          <img src="assets/project3.png" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 6" loading="lazy">
+          <img src="assets/project1.jpg" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 1">
+          <img src="assets/project2.jpg" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 2">
+          <img src="assets/project3.png" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 3">
+          <img src="assets/project1.jpg" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 4">
+          <img src="assets/project2.jpg" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 5">
+          <img src="assets/project3.png" class="w-48 h-48 object-cover flex-shrink-0" alt="Gallery Image 6">
         </div>
 
-        <!-- Carousel Controls -->
+        <!-- Carousel Buttons -->
         <button id="prev" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow">◀</button>
         <button id="next" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow">▶</button>
       </div>
 
-      <!-- Dot Indicators -->
       <div id="dots" class="flex justify-center mt-4 gap-2">
         <span class="dot w-3 h-3 rounded-full bg-gray-400 cursor-pointer"></span>
         <span class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer"></span>
         <span class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer"></span>
-        <span class="dot w-3 h-3 rounded-full bg-gray-400 cursor-pointer"></span>
+        <span class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer"></span>
         <span class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer"></span>
         <span class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer"></span>
       </div>
     </section>
   </main>
 
-  <!-- ✅ Footer -->
   <footer class="mt-16 py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm text-gray-600 dark:text-gray-300">
     <p>© 2025 Naveen Kumar Varma • Portfolio</p>
   </footer>
-      <!-- 🔼 Back To Top -->
+
   <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
 
+  <script>
+    // Theme Toggle
+    const desktopToggle = document.getElementById('theme-toggle-desktop');
+    const mobileToggle = document.getElementById('theme-toggle-mobile');
+    const html = document.documentElement;
 
-  <!-- ✅ External Script -->
-   <script>
-  // Back to Top
+    function applyTheme() {
+      const hour = new Date().getHours();
+      const isDark = html.classList.contains('dark') || hour >= 18 || hour < 6;
+      html.classList.toggle('dark', isDark);
+      [desktopToggle, mobileToggle].forEach(btn => {
+        if (btn) btn.textContent = isDark ? '🌞' : '🌙';
+      });
+    }
+
+    function toggleTheme() {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      [desktopToggle, mobileToggle].forEach(btn => {
+        if (btn) btn.textContent = isDark ? '🌞' : '🌙';
+      });
+    }
+
+    if (desktopToggle) desktopToggle.addEventListener('click', toggleTheme);
+    if (mobileToggle) mobileToggle.addEventListener('click', toggleTheme);
+    window.addEventListener('DOMContentLoaded', applyTheme);
+
+    // Mobile Menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    menuToggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+      menuToggle.textContent = mobileNav.classList.contains('hidden') ? '☰' : '✖';
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    // Back to Top
     const backToTop = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
       backToTop.style.display = window.scrollY > 300 ? "block" : "none";
@@ -175,32 +222,57 @@
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-</script>
 
-  <script src="js/main.js" defer></script>
-  <script>
-  // Animate language bars on scroll
-  const bars = document.querySelectorAll('.language-bar');
+    // Animate Language Bars
+    const bars = document.querySelectorAll('.language-bar');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bar = entry.target;
+          bar.style.width = bar.getAttribute('data-width');
+          bar.style.transition = 'width 2s ease-in-out';
+          obs.unobserve(bar);
+        }
+      });
+    }, { threshold: 0.3 });
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const bar = entry.target;
-        const targetWidth = bar.getAttribute('data-width');
-        bar.style.width = targetWidth;
-        bar.style.transition = 'width 2s ease-in-out';
-        observer.unobserve(bar); // animate only once
-      }
+    bars.forEach(bar => {
+      bar.style.width = '0%';
+      observer.observe(bar);
     });
-  }, {
-    threshold: 0.3
-  });
 
-  bars.forEach(bar => {
-    bar.style.width = '0%'; // Start at 0%
-    observer.observe(bar);
-  });
-</script>
+    // Carousel Logic
+    const carousel = document.getElementById('carousel');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = dots.length;
+    let currentIndex = 0;
 
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 12}rem)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-gray-400', i === currentIndex);
+        dot.classList.toggle('bg-gray-300', i !== currentIndex);
+      });
+    }
+
+    document.getElementById('next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel();
+      });
+    });
+
+    updateCarousel();
+  </script>
 </body>
 </html>
