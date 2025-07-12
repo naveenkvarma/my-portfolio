@@ -85,49 +85,41 @@
   <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 hidden">↑</button>
 
   <!-- ✅ Script Section -->
-  <script>
-    // Theme Toggle Logic
-    const desktopToggle = document.getElementById('theme-toggle-desktop');
-    const mobileToggle = document.getElementById('theme-toggle-mobile');
+<script>
+    // Theme Toggle
     const html = document.documentElement;
-
-    function applyTheme() {
-      const hour = new Date().getHours();
-      const isDark = html.classList.contains('dark') || hour >= 18 || hour < 6;
-      html.classList.toggle('dark', isDark);
-      [desktopToggle, mobileToggle].forEach(btn => {
-        if (btn) btn.textContent = isDark ? '🌞' : '🌙';
-      });
-    }
-
-    function toggleTheme() {
+    const toggleTheme = () => {
       html.classList.toggle('dark');
       const isDark = html.classList.contains('dark');
-      [desktopToggle, mobileToggle].forEach(btn => {
+      document.querySelectorAll('#theme-toggle-desktop, #theme-toggle-mobile').forEach(btn => {
         if (btn) btn.textContent = isDark ? '🌞' : '🌙';
       });
-    }
-
-    if (desktopToggle) desktopToggle.addEventListener('click', toggleTheme);
-    if (mobileToggle) mobileToggle.addEventListener('click', toggleTheme);
-    window.addEventListener('DOMContentLoaded', applyTheme);
-
-    // Hamburger Menu Toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
-
-    if (menuToggle && mobileNav) {
-      menuToggle.addEventListener('click', () => {
-        mobileNav.classList.toggle('hidden');
-        menuToggle.textContent = mobileNav.classList.contains('hidden') ? '☰' : '✖';
+    };
+    document.getElementById('theme-toggle-desktop')?.addEventListener('click', toggleTheme);
+    document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
+    window.addEventListener('DOMContentLoaded', () => {
+      const hour = new Date().getHours();
+      const isNight = hour >= 18 || hour < 6;
+      html.classList.toggle('dark', isNight);
+      const icon = isNight ? '🌞' : '🌙';
+      document.querySelectorAll('#theme-toggle-desktop, #theme-toggle-mobile').forEach(btn => {
+        if (btn) btn.textContent = icon;
       });
-      mobileNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileNav.classList.add('hidden');
-          menuToggle.textContent = '☰';
-        });
+    });
+
+    // Mobile Navbar Toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
+    menuToggle.addEventListener("click", () => {
+      mobileNav.classList.toggle("hidden");
+      menuToggle.textContent = mobileNav.classList.contains("hidden") ? "☰" : "✖";
+    });
+    mobileNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.add("hidden");
+        menuToggle.textContent = "☰";
       });
-    }
+    });
 
     // Back to Top
     const backToTop = document.getElementById("backToTop");
