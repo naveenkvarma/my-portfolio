@@ -1,21 +1,40 @@
+/* Badge Styles */
 .badge {
-  padding: .25rem .75rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 9999px;
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 500;
   background-color: #f3f4f6;
   color: #1f2937;
 }
+
 @media (prefers-color-scheme: dark) {
-  .badge { background-color: #374151; color: #e5e7eb; }
+  .badge {
+    background-color: #374151;
+    color: #e5e7eb;
+  }
 }
-html { scroll-behavior: smooth; }
-#mobile-nav.hidden { display: none; }
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile nav visibility */
+#mobile-nav.hidden {
+  display: none;
+}
+
+/* Body Styling */
 body {
-  font-family:'Georgia', Times New Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Garamond, serif;
+  font-family: 'Georgia', Times New Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Garamond, serif;
   font-size: 1rem;
   line-height: 1.6;
   color: #1f2937;
-  background-color: #f9fafb;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Dark Mode Body */
+.dark body {
+  color: #e5e7eb;
+}
