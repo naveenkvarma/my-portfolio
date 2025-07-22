@@ -19,40 +19,41 @@
 
   <!-- ✅ Navbar -->
   <header class="bg-white dark:bg-gray-900 shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-      <h1 class="text-xl font-bold">🎨 Through My Creative Lens</h1>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+    <h1 class="text-xl font-bold">🎨 Through My Creative Lens</h1>
 
-      <nav class="hidden md:flex space-x-6">
-        <a href="index.html" class="hover:text-blue-600">Home</a>
-        <a href="about.html" class="hover:text-blue-600">About</a>
-        <a href="projects.html" class="hover:text-blue-600">Projects</a>
-        <a href="index.html#skills" class="hover:text-blue-600">Skills</a>
-        <a href="certifications.html" class="hover:text-blue-600">Certifications</a>
-        <a href="personal.html" class="hover:text-blue-600">More</a>
-        <a href="photography.html" class="text-blue-600 font-semibold">My Clicks</a>
-        <a href="contact.html" class="hover:text-blue-600">Contact</a>
-      </nav>
+    <!-- Desktop Nav -->
+    <nav class="md:flex space-x-6">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="projects.html" class="hover:text-blue-600">Projects</a>
+      <a href="index.html#skills" class="hover:text-blue-600">Skills</a>
+      <a href="certifications.html" class="hover:text-blue-600">Certifications</a>
+      <a href="personal.html" class="hover:text-blue-600">More</a>
+      <a href="photography.html" class="text-blue-600 font-semibold">My Clicks</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+    </nav>
 
-      <!-- Theme & Mobile -->
-      <button id="theme-toggle-desktop" class="ml-4 text-xl md:text-2xl hidden md:inline">🌙</button>
-      <div class="md:hidden flex items-center gap-2">
-        <button id="menu-toggle" class="text-2xl">☰</button>
-        <button id="theme-toggle-mobile" class="text-xl">🌙</button>
-      </div>
+    <!-- Theme & Mobile -->
+    <button id="theme-toggle-desktop" class="ml-4 text-xl md:text-2xl hidden md:inline">🌙</button>
+    <div class="md:hidden flex items-center gap-2">
+      <button id="menu-toggle" class="text-2xl">☰</button>
+      <button id="theme-toggle-mobile" class="text-xl">🌙</button>
     </div>
+  </div>
 
-    <!-- Mobile Nav -->
-    <div id="mobile-nav" class="md:hidden hidden absolute top-16 left-0 w-full px-6 py-4 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 shadow-lg z-50">
-      <a href="index.html" class="block py-1 hover:text-blue-600">Home</a>
-      <a href="about.html" class="block py-1 hover:text-blue-600">About</a>
-      <a href="projects.html" class="block py-1 hover:text-blue-600">Projects</a>
-      <a href="index.html#skills" class="block py-1 hover:text-blue-600">Skills</a>
-      <a href="certifications.html" class="block py-1 hover:text-blue-600">Certifications</a>
-      <a href="personal.html" class="block py-1 hover:text-blue-600">More</a>
-      <a href="photography.html" class="block py-1 text-blue-600 font-semibold">My Clicks</a>
-      <a href="contact.html" class="block py-1 hover:text-blue-600">Contact</a>
-    </div>
-  </header>
+  <!-- Mobile Nav -->
+  <div id="mobile-nav" class="md:hidden hidden absolute top-16 left-0 w-full px-6 py-4 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 shadow-lg z-50">
+    <a href="index.html" class="block py-1 hover:text-blue-600">Home</a>
+    <a href="about.html" class="block py-1 hover:text-blue-600">About</a>
+    <a href="projects.html" class="block py-1 hover:text-blue-600">Projects</a>
+    <a href="index.html#skills" class="block py-1 hover:text-blue-600">Skills</a>
+    <a href="certifications.html" class="block py-1 hover:text-blue-600">Certifications</a>
+    <a href="personal.html" class="block py-1 hover:text-blue-600">More</a>
+    <a href="photography.html" class="block py-1 text-blue-600 font-semibold">My Clicks</a>
+    <a href="contact.html" class="block py-1 hover:text-blue-600">Contact</a>
+  </div>
+</header>
 
   <main class="max-w-6xl mx-auto px-4 py-10">
 
@@ -67,42 +68,69 @@
       <button data-filter="all" class="filter-btn bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-white px-4 py-1 rounded-full text-sm hover:bg-blue-200 dark:hover:bg-blue-700 transition">All</button>
       <button data-filter="nature" class="filter-btn bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-white px-4 py-1 rounded-full text-sm hover:bg-blue-200 dark:hover:bg-blue-700 transition">Nature</button>
       <button data-filter="sky" class="filter-btn bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-white px-4 py-1 rounded-full text-sm hover:bg-blue-200 dark:hover:bg-blue-700 transition">Sky</button>
-      <button data-filter="architecture" class="filter-btn bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-white px-4 py-1 rounded-full text-sm hover:bg-blue-200 dark:hover:bg-blue-700 transition">Architecture</button>
+      <button data-filter="misc" class="filter-btn bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-white px-4 py-1 rounded-full text-sm hover:bg-blue-200 dark:hover:bg-blue-700 transition">Misc</button>
     </div>
 
     <!-- 🖼️ Gallery -->
-    <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
+<div id="gallery-grid" class="masonry mt-8">
+  <!-- 🔍 Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <button id="close-lightbox" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+  <button id="prev-lightbox" class="absolute left-6 text-white text-3xl">&#10094;</button>
+  <img id="lightbox-img" class="max-w-full max-h-[80%] rounded-lg shadow-lg" src="" alt="Preview" />
+  <button id="next-lightbox" class="absolute right-6 text-white text-3xl">&#10095;</button>
+</div>
 
-      <!-- Nature -->
-      <div class="gallery-item" data-category="nature">
-        <img src="photography/nature1.jpg" alt="Nature" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
-      </div>
+  <!-- Nature (6 images) -->
+    <div class="gallery-item" data-category="nature">
+      <img src="photography/n1.jpg" alt="Nature" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
+    </div>
+    <div class="gallery-item" data-category="nature">
+      <img src="photography/n2.jpg" alt="Nature" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
+    </div>
+    <div class="gallery-item" data-category="nature">
+      <img src="photography/n3.jpg" alt="Nature" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
+    </div>
+    <div class="gallery-item" data-category="nature">
+      <img src="photography/n4.jpg" alt="Nature" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
+    </div>
+    <div class="gallery-item" data-category="nature">
+      <img src="photography/n5.jpg" alt="Nature" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
+    </div>
+    <div class="gallery-item" data-category="nature">
+      <img src="photography/n6.jpg" alt="Nature" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
+    </div>
 
-      <!-- Sky -->
-      <div class="gallery-item" data-category="sky">
-        <img src="photography/sky1.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
-      </div>
+    <!-- Sky (21 images) -->
+    <div class="gallery-item" data-category="sky"><img src="photography/s1.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s2.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s3.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s4.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s5.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s6.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s7.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s8.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s9.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s10.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s11.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s12.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s13.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s14.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s15.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s16.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s17.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s18.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s19.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s20.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
+    <div class="gallery-item" data-category="sky"><img src="photography/s21.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" /></div>
 
-      <!-- Architecture -->
-      <div class="gallery-item" data-category="architecture">
-        <img src="photography/architecture1.jpg" alt="Architecture" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
-      </div>
-
-      <!-- Nature -->
-      <div class="gallery-item" data-category="nature">
-        <img src="photography/nature2.jpg" alt="Nature" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
-      </div>
-
-      <!-- Sky -->
-      <div class="gallery-item" data-category="sky">
-        <img src="photography/sky2.jpg" alt="Sky" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
-      </div>
-
-      <!-- Architecture -->
-      <div class="gallery-item" data-category="architecture">
-        <img src="photography/architecture2.jpg" alt="Architecture" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
-      </div>
-
+    <!-- Misc (2 images) -->
+    <div class="gallery-item" data-category="misc">
+      <img src="photography/m1.jpg" alt="Misc" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
+    </div>
+    <div class="gallery-item" data-category="misc">
+      <img src="photography/m2.jpg" alt="Misc" class="rounded-lg w-full object-cover cursor-pointer hover:scale-105 transition duration-300" />
+    </div>
     </div>
   </main>
 
@@ -150,24 +178,72 @@
         menuToggle.textContent = "☰";
       });
     });
-        // 🖼️ Filter Logic for Gallery
+
+    // 🖼️ Filter Logic for Gallery
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
+      const filter = button.getAttribute('data-filter');
 
-        galleryItems.forEach(item => {
-          const category = item.getAttribute('data-category');
-          item.style.display = (filter === 'all' || filter === category) ? 'block' : 'none';
-        });
+      galleryItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+        item.classList.remove('hidden');
+        } else {
+        item.classList.add('hidden');
+        }
+      });
 
-        // Highlight active button
-        filterButtons.forEach(btn => btn.classList.remove('bg-blue-300', 'dark:bg-blue-700'));
-        button.classList.add('bg-blue-300', 'dark:bg-blue-700');
+      // Highlight active button
+      filterButtons.forEach(btn => btn.classList.remove('bg-blue-300', 'dark:bg-blue-700'));
+      button.classList.add('bg-blue-300', 'dark:bg-blue-700');
       });
     });
+
+    // 🖼️ Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeLightbox = document.getElementById('close-lightbox');
+    const nextLightbox = document.getElementById('next-lightbox');
+    const prevLightbox = document.getElementById('prev-lightbox');
+
+    let currentIndex = 0;
+    const images = Array.from(document.querySelectorAll('#gallery-grid img'));
+
+    // Open Lightbox
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => {
+      currentIndex = index;
+      showImage();
+      lightbox.classList.remove('hidden');
+      });
+    });
+
+    function showImage() {
+      lightboxImg.src = images[currentIndex].src;
+    }
+
+    // Next & Prev
+    nextLightbox.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage();
+    });
+
+    prevLightbox.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage();
+    });
+
+    // Close Lightbox
+    closeLightbox.addEventListener('click', () => lightbox.classList.add('hidden'));
+
+    // Close on outside click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.add('hidden');
+    });
+
     // Back to Top
     const backToTop = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
