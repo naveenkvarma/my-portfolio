@@ -38,6 +38,12 @@ body {
 .dark body {
   color: #e5e7eb;
 }
+body {
+  background: linear-gradient(to bottom right, #f9fafb, #dbeafe);
+}
+html.dark body {
+  background: linear-gradient(to bottom right, #111827, #1f2937);
+}
 
 /* -------------------
    NAVBAR

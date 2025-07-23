@@ -6,6 +6,31 @@
   <title>Certifications | Naveen Kumar Varma</title>
     <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+  html { color-scheme: light dark; }
+  html.dark body {
+    background:#111827; /* approx gray-900 */
+    color:#e5e7eb;
+  }
+  html:not(.dark) body {
+    background:#f9fafb; /* approx gray-50 */
+    color:#1f2937;
+  }
+</style>
+<script>
+  // --- Early theme apply (runs before paint) ---
+  (function() {
+    const stored = localStorage.getItem('theme'); // 'dark' | 'light' | null
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const useDark = stored ? stored === 'dark' : prefersDark;
+    if (useDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  })();
+</script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { darkMode: 'class' };
@@ -154,7 +179,7 @@
 
   <!-- Workshops & Trainings Section -->
   <h2 class="text-3xl font-bold mt-16 mb-10 text-center text-green-600">💻 Workshops & Trainings</h2>
-  <ul class="space-y-">
+  <ul class="space-y-4">
     <!-- Workshop 1 -->
     <li class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
       <p class="text-lg font-semibold mb-1 flex items-center gap-2">

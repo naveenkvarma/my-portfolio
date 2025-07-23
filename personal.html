@@ -139,9 +139,15 @@
 
   </div>
 </section>
-
     <!-- 🎨 Gallery -->
      <section id="gallery" class="py-16 px-4 max-w-5xl mx-auto">
+      <!-- Lightbox Overlay -->
+       <div id="lightbox" class="hidden">
+        <span id="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Preview">
+        <button id="prev-lightbox">&#10094;</button>
+        <button id="next-lightbox">&#10095;</button>
+      </div>
       <h2 class="text-4xl font-bold mb-6 text-center text-amber-500">🎨 Photo Gallery</h2>
       <div class="relative w-full max-w-2xl mx-auto overflow-hidden rounded-lg shadow-lg">
         <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
@@ -295,35 +301,81 @@
       observer.observe(bar);
     });
     // Carousel Functionality
-    const carousel = document.getElementById('carousel');
-    const dots = document.querySelectorAll('.dot');
-    const images = document.querySelectorAll('#carousel img');
-    const totalImages = images.length;
-    const imagesPerDot = Math.ceil(totalImages / dots.length);
-    let currentIndex = 0;
-    function updateCarousel() {
-      carousel.style.transform = `translateX(-${currentIndex * 12}rem)`; 
-      const activeDotIndex = Math.floor(currentIndex / imagesPerDot);
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('bg-gray-400', i === activeDotIndex);
-        dot.classList.toggle('bg-gray-300', i !== activeDotIndex);
-      });
-    }
-    document.getElementById('next').addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % totalImages;
-      updateCarousel();
-    });
-    document.getElementById('prev').addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-      updateCarousel();
-    });
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        currentIndex = i * imagesPerDot;
-        updateCarousel();
-      });
-    });
+const carousel = document.getElementById('carousel');
+const dots = document.querySelectorAll('.dot');
+const images = document.querySelectorAll('#carousel img');
+const totalImages = images.length;
+const imagesPerDot = Math.ceil(totalImages / dots.length);
+let carouselIndex = 0;  // Renamed to avoid conflict
+
+function updateCarousel() {
+  carousel.style.transform = `translateX(-${carouselIndex * 12}rem)`; 
+  const activeDotIndex = Math.floor(carouselIndex / imagesPerDot);
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('bg-gray-400', i === activeDotIndex);
+    dot.classList.toggle('bg-gray-300', i !== activeDotIndex);
+  });
+}
+
+document.getElementById('next').addEventListener('click', () => {
+  carouselIndex = (carouselIndex + 1) % totalImages;
+  updateCarousel();
+});
+document.getElementById('prev').addEventListener('click', () => {
+  carouselIndex = (carouselIndex - 1 + totalImages) % totalImages;
+  updateCarousel();
+});
+
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    carouselIndex = i * imagesPerDot;
     updateCarousel();
+  });
+});
+
+updateCarousel();
+
+// Lightbox Logic
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeLightbox = document.getElementById('close-lightbox');
+const nextLightbox = document.getElementById('next-lightbox');
+const prevLightbox = document.getElementById('prev-lightbox');
+
+const galleryImages = document.querySelectorAll('#carousel img');
+let lightboxIndex = 0;  // Renamed to avoid conflict
+
+// Open Lightbox
+galleryImages.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    lightboxIndex = index;
+    showLightboxImage();
+    lightbox.classList.remove('hidden');
+  });
+});
+
+function showLightboxImage() {
+  lightboxImg.src = galleryImages[lightboxIndex].src;
+}
+
+// Next & Prev for Lightbox
+nextLightbox.addEventListener('click', () => {
+  lightboxIndex = (lightboxIndex + 1) % galleryImages.length;
+  showLightboxImage();
+});
+prevLightbox.addEventListener('click', () => {
+  lightboxIndex = (lightboxIndex - 1 + galleryImages.length) % galleryImages.length;
+  showLightboxImage();
+});
+
+// Close Lightbox
+closeLightbox.addEventListener('click', () => lightbox.classList.add('hidden'));
+
+// Close on outside click
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) lightbox.classList.add('hidden');
+});
+
   </script>
 </body>
 </html>
